@@ -6,9 +6,11 @@ def fetch_url(url):
     from subprocess import call, Popen, PIPE
     try:
         p = Popen(['curl', url ,'--silent'], stdout=PIPE)
+        a=[]
         for line in p.stdout:
-           print (line)
+            a.append(line)
         p.wait()
+        print (a[0])
     except:
         print ("error")
     finally:
